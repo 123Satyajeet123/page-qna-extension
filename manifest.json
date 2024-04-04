@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Fast Scappy",
+  "version": "1.0.0",
+  "description": "Quickly do Q&A with a page",
+  "author": "SJ",
+
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content-script.js"]
+    }
+  ]
+}
